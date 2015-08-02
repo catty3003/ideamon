@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Post:</strong>
+  <%= @idea.post %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= @idea.project_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @idea.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+

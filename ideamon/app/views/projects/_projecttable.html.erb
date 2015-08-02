@@ -1,0 +1,54 @@
+<table class="table table-striped table-bordered table-hover "> 
+  <thead>
+    <tr>
+      <% if current_user.admin == true %>
+        <th>Done?</th>
+        <% else %>
+      <% end %>
+      <th>
+      <% if params[:sorting] == "name" %>
+        Name
+      <% else %>
+        <%= link_to "Name", projects_path(sorting: "name") %>
+      <% end %>
+      </th>
+      <th>
+      <% if params[:sorting] == "deadline" %>
+        Deadline
+      <% else %>
+        <%= link_to "Deadline", projects_path(sorting: "deadline") %>
+      <% end %>
+      </th>
+      <th>
+      <% if params[:sorting] == "question" %>
+        Question
+      <% else %>
+        <%= link_to "Question", projects_path(sorting: "question") %>
+      <% end %> 
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% projects.each do |project| %>
+      <tr >
+        <% if current_user.admin == true %>
+          <td>
+          <%= form_for project do |f| %>
+          <%= f.check_box :done, class: "checkable" %>
+          <% end %>
+          </td>
+          <% else %>
+        <% end %>        
+        <td class="<%= css_class %>"><%= link_to project.name, project_path(project) %></td>
+        <td>
+          <%= "in " if !project.is_delayed? %> 
+          <%= pluralize(project.distance_from_now_in_days.abs, "Day")  %>
+          <%= " ago " if project.is_delayed? %>
+          (<%= project.deadline %>) 
+        </td>
+        <td><%= project.question %></td>                  
+      </tr>
+    <% end %>
+  </tbody>
+</table>

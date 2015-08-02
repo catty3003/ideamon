@@ -1,0 +1,31 @@
+<%= form_for @idea, :html => { :role => "form"} do |f| %>    
+  <% if @idea.errors.any? %>
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@idea.errors.count, "error") %> prohibited this idea from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% @idea.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :project_id %><br>
+    <%= f.select :project_id, Project.all.collect {|c| [ c.name, c.id ] }, { :include_blank => true, :selected => @idea.project_id, :prompt => "bitte Project wählen für das die Idee erstellt wird"}, class: "form-control" %>
+  </div> 
+
+  <div class="form-group">
+    <%= f.label :post %><br>
+    <%= f.text_area :post, :maxlength => 300, class: "form-control", placeholder: "Can't wait for your Idea" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Save Project", class: "btn btn-primary" %>
+    <%= link_to 'Back to Ideas overview', ideas_path, class: "btn btn-default" %>
+  </div>
+<% end %>

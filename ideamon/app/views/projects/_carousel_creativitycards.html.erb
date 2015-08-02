@@ -1,0 +1,66 @@
+<!--  <div class="row carousel-holder">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >      
+    <ol class="carousel-indicators">
+    	<% @creativitycards.each do |c| %>
+        <li class="" data-slide-to="0" data-target="#carousel-example-generic"></li>
+        <% end %>
+    </ol>
+      <div class="carousel-inner">
+  			<% @creativitycards.each do |c| %>
+        <div class="item">
+          <h3><%= c.title %></h3>									    
+              <a class="menue">
+              <%= image_tag c.image_url(:thumb2) if c.image? %>
+              <span><%= image_tag c.image_url(:thumb) if c.image? %></span></a>
+          <p style="white-space: pre-line;">
+            <%= c.shortdescription %>
+					</p>
+        </div>
+        <% end %>
+        <div class="item active">
+          <h3>Kreativismen</h3>
+					<p >
+					    Die Kreativismen sind eine Sammlung von Kreativitätsmethoden von Dr. Roland Müller und Katja Thoring. Die hier gezeigten Kreativismenkarten sollen dabei helfen, entfernte Assoziationen ans Tagelicht bringen und somit für innovative Ideen sorgen. 
+					</p>
+        </div>
+      </div>
+
+      <a class="left carousel-control" data-slide="prev" href="#carousel-example-generic"></a>
+      <a class="right carousel-control" data-slide="next" href="#carousel-example-generic"></a> 
+    </div>
+	</div>
+-->
+
+
+  <div class="row carousel-holder">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" >      
+        <ol class="carousel-indicators">
+            <li class="" data-slide-to="0" data-target="#carousel-example-generic"></li>
+            <li class="" data-slide-to="1" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="2" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="3" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="4" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="5" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="6" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="7" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="8" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="9" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="10" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="11" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="12" data-target="#carousel-example-generic"></li>
+            <li class="active" data-slide-to="13" data-target="#carousel-example-generic"></li>
+        </ol> </br>
+      <div class="carousel-inner">
+        <%= render "kreativismen_short" %>
+        <div class="item active">
+          <h3>Kreativismen</h3>
+          <p >
+              Die Kreativismen sind eine Sammlung von Kreativitätsmethoden von Dr. Roland Müller und Katja Thoring. Die hier gezeigten Kreativismenkarten sollen dabei helfen, entfernte Assoziationen ans Tagelicht bringen und somit für innovative Ideen sorgen. 
+          </p>
+        </div>
+      </div>
+
+      <a class="left carousel-control" data-slide="prev" href="#carousel-example-generic"></a>
+      <a class="right carousel-control" data-slide="next" href="#carousel-example-generic"></a> 
+    </div>
+  </div>

@@ -1,0 +1,43 @@
+<table >
+  <thead>
+    <tr>
+      <th>Project ID</th>
+      <th>Name</th>
+      <th>Deadline</th>
+      <th>Done</th>
+      <th>Idea ID</th>
+      <th>Post</th>      
+      <th>User ID</th>
+      <th>Username</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Nationalität</th>
+      <th>Abschluss</th>
+      <th>Beruf</th>
+      <th>Created_at</th>
+      <th>Updated_at</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.project_id %></td>
+        <td><%= idea.project.name %></td>
+        <td><%= idea.project.deadline %></td>
+        <td><%= idea.project.done %></td>
+        <td><%= idea.id %></td>
+        <td><%= idea.post %></td>
+        <td><%= idea.user_id %></td>
+        <td><%= idea.user.username %></td>
+        <td><%= idea.user.age %></td>
+        <td><%= idea.user.sex %></td>
+        <td><%= idea.user.nationality %></td>
+        <td><%= idea.user.qualification %></td>
+        <td><%= idea.user.profession %></td>
+        <td><%= idea.created_at %></td>
+        <td><%= idea.updated_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

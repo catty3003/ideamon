@@ -1,0 +1,39 @@
+<div class="bs-docs-section">
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="page-header">          
+        <h1>New Idea</h1>
+      </div>
+
+      <div class="col-md-3" id="leftCol">
+        <div class="well">    
+          
+        </div>
+      </div>     
+
+      <div class="col-md-9" id="rightCol"> 
+        <div class="well"> 
+          <%= render 'form' %>
+        </div>
+      </div>
+
+      <div class="col-md-9 col-md-offset-3"> 
+        <div class="well"> 
+        	<% @useridea.each do |idea| %>
+          <div class="panel panel-info">
+            <div class="panel-body">      				
+      				<p>        
+        				<%= idea.post %>
+      				</p>     					 
+     				</div>
+     			</div>
+     			<% end %> 
+     		</div>
+     	</div>  
+      
+
+    </div>
+  </div>
+</div>
+

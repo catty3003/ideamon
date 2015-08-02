@@ -1,0 +1,53 @@
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>F1</th>
+      <th>F2</th>
+      <th>F3</th>
+      <th>F4</th>
+      <th>F5</th>
+      <th>F6</th>
+      <th>F7</th>
+      <th>F8</th>
+      <th>F9</th>
+      <th>F10</th>
+      <th>F11</th>
+      <th>F12</th>
+      <th>F13</th>
+      <th>F14</th>
+      <th>F15</th>
+      <th>F16</th>
+      <th>F17</th>
+      <th>F18</th>
+      <th>User</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @questions.each do |question| %>
+      <tr>
+        <td><%= question.id %></td>
+        <td><%= question.f1 %></td>
+        <td><%= question.f2 %></td>
+        <td><%= question.f3 %></td>
+        <td><%= question.f4 %></td>
+        <td><%= question.f5 %></td>
+        <td><%= question.f6 %></td>
+        <td><%= question.f7 %></td>
+        <td><%= question.f8 %></td>
+        <td><%= question.f9 %></td>
+        <td><%= question.f10 %></td>
+        <td><%= question.f11 %></td>
+        <td><%= question.f12 %></td>
+        <td><%= question.f13 %></td>
+        <td><%= question.f14 %></td>
+        <td><%= question.f15 %></td>
+        <td><%= question.f16 %></td>
+        <td><%= question.f17 %></td>
+        <td><%= question.f18 %></td>
+        <td><%= question.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

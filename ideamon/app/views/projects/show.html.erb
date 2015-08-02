@@ -1,0 +1,64 @@
+<div class="bs-docs-section">
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-9 col-md-offset-3" >
+        <div class="page-header">          
+          <h1><%= @project.question %></h1>
+        </div>
+      </div>
+    </div>
+  </div>        
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-3" id="left_creativity">
+        <div id="side_carousel">
+          <%= render 'carousel_creativitycards' %>
+        </div>
+      </div>
+      <div class="col-md-3" id="left">    
+        <div id="side_input">           
+          <%= render 'idea_input' %>    
+        </div>
+      </div>
+      <div class="col-md-9 col-md-offset-3"> 
+        <div class="well">
+          <%= render 'info' %>
+        </div> 
+      </div>
+    </div>
+  </div>  
+
+
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="col-md-9 col-md-offset-3" >  
+        <div class="well">
+          <h2>Ideas</h2>
+          <ul class="nav nav-tabs">
+            <li class="active"><a  href="#myIdeas" data-toggle="tab"><strong>my Ideas</strong></a></li>
+            <li><a href="#allIdeas" data-toggle="tab"><strong>all Ideas</strong></a></li>
+          </ul>
+          <div class="tab-content" style="padding: 0px 20px 0px 20px">
+            <div class="tab-pane active" id="myIdeas">  
+                <%= render 'tab_myIdeas' %>
+            </div>
+            <div class="tab-pane" id="allIdeas">              
+              <%= render 'tab_allIdeas' %>          
+            </div>
+          </div>
+        </div>
+      </div>            
+    </div>
+  </div> 
+
+
+</div>
+
+
+
+
+
+

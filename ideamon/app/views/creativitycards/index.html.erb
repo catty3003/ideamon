@@ -1,0 +1,46 @@
+<div class="bs-docs-section">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="page-header">          
+        <h1>Kreativismen</h1>
+      </div>
+    </div>
+  </div>
+      
+  <div class="row">
+    <div class="col-md-12">
+
+
+      <% if current_user.admin == true %>
+      <%= link_to 'New Creativitycard', new_creativitycard_path, class: "btn btn-success btn-sm" %>
+      <% else %>
+      <% end %>
+      <br>
+      <br>
+
+      <!-- <% @creativitycards.order(created_at: :desc).each do |c| %>
+        <div class="col-md-4">
+          <div class="thumbnail" >                          
+            <h3><%= link_to c.title, creativitycard_path(c) %></h3>
+
+            <a class="menue">
+              <%= image_tag c.image_url(:thumb) if c.image? %>
+              <span><%= image_tag c.image_url(:normal) if c.image? %></span></a>
+
+            <p style="white-space: pre-line;"><%= c.suggestion %></p>
+            <p style="white-space: pre-line;"><strong>Beispiel: </strong><%= c.example %></p>
+            <% if current_user.admin == true %>
+              <%= link_to 'Show', c, class: "btn btn-primary btn-sm" %> 
+              <%= link_to 'Edit', edit_creativitycard_path(c), class: "btn btn-warning btn-sm" %> 
+              <%= link_to 'Destroy', c, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %>
+            <% else %>
+            <% end %>
+          </div>                  
+        </div>
+      <% end %> -->
+
+      <%= render "kreativismen" %>
+
+    </div>
+  </div>
+</div>

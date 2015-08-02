@@ -1,0 +1,53 @@
+<%= nested_form_for @project, :html => { :multipart => true} do |f| %> 
+
+
+  <% if @project.errors.any? %>
+    <div class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+          <% @project.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="checkbox">
+    <label>
+      <%= f.check_box :done %> <%= f.label :done %>
+    </label>
+  </div>
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, class: "form-control", placeholder: "Name of Project" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :deadline %><br>
+    <%= f.date_field :deadline, class: "form-control", placeholder: "Deadline of Project" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :question %><br>
+    <%= f.text_field :question, class: "form-control", placeholder: "Question for Brainstorming" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :comment %><br>
+    <%= f.text_area :comment, class: "form-control", placeholder: "some description" %>
+  </div>
+
+  <div class="form-group"> 
+    <%= f.fields_for :creativitycards do |builder| %>
+    <%= render 'kreativismen', f: builder %>
+    <% end %>
+    </br>
+    <p><%= f.link_to_add "Add more Kreativismen", :creativitycards, class: "btn btn-success btn-sm" %></p>
+  </div>   
+
+  <div class="actions">
+    <%= f.submit "Save Project", class: "btn btn-primary" %>  
+    <%= link_to 'Back to Project overview', projects_path, class: "btn btn-default" %>
+  </div> 
+<% end %>
