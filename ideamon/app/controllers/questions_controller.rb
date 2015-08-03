@@ -1,6 +1,5 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
-  before_action :set_user_identification, only: [ :edit, :update, :destroy]
   before_action :set_admin, only: [:index]
   before_action :authenticate_user!
 
@@ -91,7 +90,7 @@ class QuestionsController < ApplicationController
     def set_user_identification
       @question = Question.find(params[:id])
       if @question.user_id != current_user.id
-        redirect_to question_path, alert: 'You can edit oder delete only your own Ideas.'
+        redirect_to question_path, alert: 'You can edit oder delete only your own Questionaire.'
       end
     end
 
