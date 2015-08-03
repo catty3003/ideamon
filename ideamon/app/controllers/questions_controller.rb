@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
+  before_action :set_user_identification, only: [ :edit, :update, :destroy]
   before_action :set_admin, only: [:index]
   before_action :authenticate_user!
 
@@ -38,7 +39,7 @@ class QuestionsController < ApplicationController
   # POST /questions
   # POST /questions.json
   def create
-    @question = Question.new(question_params)
+    @question = current_user.questions.new(question_params)
 
     respond_to do |format|
       if @question.save
@@ -85,6 +86,13 @@ class QuestionsController < ApplicationController
     def set_admin
       if current_user == nil || current_user.admin != true
         redirect_to :back, alert: 'Only Admin are alowd to see results.'
+      end
+    end
+
+    def set_user_identification
+      @idea = Idea.find(params[:id])
+      if @idea.user_id != current_user.id
+        redirect_to idea_path, alert: 'You can edit oder delete only your own Ideas.'
       end
     end
 
