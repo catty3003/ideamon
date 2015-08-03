@@ -1,5 +1,5 @@
 <%= form_for @idea, :html => { :role => "form"} do |f| %>        
-  <%= f.text_area :post, :size => "25x10", :maxlength => 300, class: "form-control", placeholder: "Can't wait for your Idea, but only 300 Characters" %>
+  <%= f.text_area :post, :size => "25x10", :maxlength => 300, class: "form-control", placeholder: "Can't wait for your Idea, but only 300 Characters per Idea" %>
   <%= f.hidden_field :project_id, { :value => @project.id } %>
   <%= f.hidden_field :user_id, { :value => current_user.id} %>           
   <%= f.submit "Save Idea", class: "btn btn-info btn-sm btn-block" %>
