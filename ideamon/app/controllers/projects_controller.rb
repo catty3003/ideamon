@@ -2,6 +2,7 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
   before_action :set_project_admin_edit_destroy, only: [:edit, :update, :destroy]
   before_action :set_project_admin_create, only: [:new, :create]
+  before_action :set_user, only: [:help]
   before_action :authenticate_user!, except: [:home, :about, :help, :impressum]
 
   # GET /projects
@@ -121,6 +122,10 @@ class ProjectsController < ApplicationController
       if current_user.admin != true
         redirect_to :back, alert: 'Only Admin are alowd to create Projects.'
       end
+    end
+
+    def set_user
+       @user = current_user
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

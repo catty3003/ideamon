@@ -1,12 +1,12 @@
 class QuestionsController < ApplicationController
   before_action :set_question, only: [:show, :edit, :update, :destroy]
   before_action :set_admin, only: [:index]
-  before_action :set_user, only: [:new, :edit]
-  before_action :authenticate_user!, except: [:home, :about, :help, :impressum]
+  before_action :authenticate_user!
 
 
   # GET /questions
   # GET /questions.json
+
   def index
     @questions = Question.all
 
@@ -87,11 +87,6 @@ class QuestionsController < ApplicationController
         redirect_to :back, alert: 'Only Admin are alowd to see results.'
       end
     end
-
-    def set_user
-       @user = current_user
-    end
-
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params

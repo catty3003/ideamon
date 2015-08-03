@@ -35,7 +35,7 @@
               <li><%= link_to "Sign-Up", projects_help_path(anchor: "sign-up") %></li>
               <li><%= link_to "Edit Profile", projects_help_path(anchor: "edit") %></li>
               <li><%= link_to "Add idea", projects_help_path(anchor: "add") %></li>
-              <li><%= link_to "Fragebogen ausfüllen", projects_help_path(anchor: "frage") %></li>
+              <li><%= link_to "Fragebogen ausfüllen/ändern", projects_help_path(anchor: "frage") %></li>
               <li><%= link_to "Logout", projects_help_path(anchor: "logout") %></li>
             </strong></ol>
           </div>
@@ -84,7 +84,12 @@
             <br>
             <br>
             <h4>4. Umfrage</h4>
-             <p>Wenn Sie für beide Projekte Ideen eingebracht haben, nehmen Sie sich doch bitte noch die Zeit, eine kurze Auswertung der Anwendung vorzunehmen. Zu diesem Zweck wählen Sie einfach den Hauptnavigationsreiter (Kopfzeile) Umfrage an. Sie werden zu einer Umfrage weitergeleitet. Diese wurde unter Einsatz von google-Umfragen erstellt und soll helfen die Anwendung zu verbessern und die Ergebnisse die sie hervorbringt besser zu verstehen. </p>
+            <p>Wenn Sie für beide Projekte Ideen eingebracht haben, nehmen Sie sich doch bitte noch die Zeit, eine kurze Auswertung der Anwendung vorzunehmen. Zu diesem Zweck wählen Sie einfach den Hauptnavigationsreiter (Kopfzeile) Umfrage an. Sie werden zu einer Umfrage weitergeleitet. Diese soll helfen die Anwendung zu verbessern und die Ergebnisse die sie hervorbringt besser zu verstehen. </p>
+            <p><strong> Falls sie bereits einen Fragebogen ausgefüllt haben und diesen ändern wollen, klicken sie bitte auf EDIT (dieser Button erscheint erst, wenn Sie bereits einen Fragebogen ausgefüllt haben) </strong></p>
+
+            <% @user.questions.order(created_at: :desc).each do |question| %>
+              <%= link_to "Edit", edit_question_path(question), class: "btn btn-warning btn-sm" %>
+            <% end %> 
           </div>
 
           <div id="logout">
