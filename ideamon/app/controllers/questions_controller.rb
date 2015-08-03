@@ -40,7 +40,6 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = current_user.questions.new(question_params)
-
     respond_to do |format|
       if @question.save
         format.html { redirect_to edit_question_path(@question), notice: 'Questionnaire was successfully created.' }
@@ -90,9 +89,9 @@ class QuestionsController < ApplicationController
     end
 
     def set_user_identification
-      @idea = Idea.find(params[:id])
-      if @idea.user_id != current_user.id
-        redirect_to idea_path, alert: 'You can edit oder delete only your own Ideas.'
+      @question = Question.find(params[:id])
+      if @question.user_id != current_user.id
+        redirect_to question_path, alert: 'You can edit oder delete only your own Ideas.'
       end
     end
 
