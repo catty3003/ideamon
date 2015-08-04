@@ -25,10 +25,10 @@ class ProjectsController < ApplicationController
     
     if params[:sorting]
       @done = Project.where("done = ? OR deadline < ?", true, Date.today).order(params[:sorting] => :asc)
-      @todo = Project.where("done = ? AND deadline > ?", false, Date.today).order(params[:sorting] => :asc)
+      @todo = Project.where("done = ? AND deadline >= ?", false, Date.today).order(params[:sorting] => :asc)
     else 
       @done = Project.where("done = ? OR deadline < ?", true, Date.today).order(deadline: :desc)     
-      @todo = Project.where("done = ? AND deadline > ?", false, Date.today).order(deadline: :asc)
+      @todo = Project.where("done = ? AND deadline >= ?", false, Date.today).order(deadline: :asc)
     end
 
     if current_user.admin != true
