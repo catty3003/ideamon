@@ -1,68 +1,86 @@
-<p id="notice"><%= notice %></p>
+<div class="bs-docs-section">
+  <div class="row">
+    <div class="col-md-12">
 
-<h1>Listing Questions</h1>
-<%= link_to 'Export XLS', url_for(:format => 'xls'), class: "btn btn-primary btn-sm" %> 
-<%= link_to 'Export CSV', url_for(:format => 'csv'), class: "btn btn-primary btn-sm" %>
+      <div class="page-header">          
+        <h1>Questionaire Results</h1>
+      </div>        
 
-</br>
-</br>
-<table class="table table-striped table-bordered table-hover ">
-  <thead>
-    <tr>
-      <th>F1</th>
-      <th>F2</th>
-      <th>F3</th>
-      <th>F4</th>
-      <th>F5</th>
-      <th>F6</th>
-      <th>F7</th>
-      <th>F8</th>
-      <th>F9</th>
-      <th>F10</th>
-      <th>F11</th>
-      <th>F12</th>
-      <th>F13</th>
-      <th>F14</th>
-      <th>F15</th>
-      <th>F16</th>
-      <th>F17</th>
-      <th>F18</th>
-      <th>User</th>
 
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+        <div class="well">
+          <%= link_to 'Export XLS', url_for(:format => 'xls'), class: "btn btn-primary btn-sm" %> 
+          <%= link_to 'Export CSV', url_for(:format => 'csv'), class: "btn btn-primary btn-sm" %>
+          </br>
+          </br>         
+          <div class="panel panel-info">
+            <h3></h3>
+            <div class="panel-body">       
+              <div class="table-responsive table-scrollable">
+                <table class="table table-striped table-bordered table-hover ">
+                  <thead>
+                    <tr>
+                      <th>F1</th>
+                      <th>F2</th>
+                      <th>F3</th>
+                      <th>F4</th>
+                      <th>F5</th>
+                      <th>F6</th>
+                      <th>F7</th>
+                      <th>F8</th>
+                      <th>F9</th>
+                      <th>F10</th>
+                      <th>F11</th>
+                      <th>F12</th>
+                      <th>F13</th>
+                      <th>F14</th>
+                      <th>F15</th>
+                      <th>F16</th>
+                      <th>F17</th>
+                      <th>F18</th>
+                      <th>User</th>
+                      <th colspan="3"></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% @questions.each do |question| %>
+                      <tr>
+                        <td><%= question.f1 %></td>
+                        <td><%= question.f2 %></td>
+                        <td><%= question.f3 %></td>
+                        <td><%= question.f4 %></td>
+                        <td><%= question.f5 %></td>
+                        <td><%= question.f6 %></td>
+                        <td><%= question.f7 %></td>
+                        <td><%= question.f8 %></td>
+                        <td><%= question.f9 %></td>
+                        <td><%= question.f10 %></td>
+                        <td><%= question.f11 %></td>
+                        <td><%= question.f12 %></td>
+                        <td><%= question.f13 %></td>
+                        <td><%= question.f14 %></td>
+                        <td><%= question.f15 %></td>
+                        <td><%= question.f16 %></td>
+                        <td><%= question.f17 %></td>
+                        <td><%= question.f18 %></td>
+                        <td><%= question.user_id %></td>
+                        <td><%= link_to 'Show', question %></td>
+                        <td><%= link_to 'Edit', edit_question_path(question) %></td>
+                        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                      </tr>
+                    <% end %>
+                  </tbody>
+                </table>
+              </div>
+              <br>     
+            </div>
+          </div>
+          <%= link_to 'New Questionaire', new_question_path %>
+        </div>
 
-  <tbody>
-    <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.f1 %></td>
-        <td><%= question.f2 %></td>
-        <td><%= question.f3 %></td>
-        <td><%= question.f4 %></td>
-        <td><%= question.f5 %></td>
-        <td><%= question.f6 %></td>
-        <td><%= question.f7 %></td>
-        <td><%= question.f8 %></td>
-        <td><%= question.f9 %></td>
-        <td><%= question.f10 %></td>
-        <td><%= question.f11 %></td>
-        <td><%= question.f12 %></td>
-        <td><%= question.f13 %></td>
-        <td><%= question.f14 %></td>
-        <td><%= question.f15 %></td>
-        <td><%= question.f16 %></td>
-        <td><%= question.f17 %></td>
-        <td><%= question.f18 %></td>
-        <td><%= question.user_id %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
-<br>
+    </div>
+  </div>
+</div>
 
-<%= link_to 'New Question', new_question_path %>
+
+

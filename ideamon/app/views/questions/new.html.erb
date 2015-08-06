@@ -7,14 +7,14 @@
       </div>
 
       <div class="col-md-3" id="leftCol">
-        <div class="well">  
-        <p><strong> Bitte beantworten Sie die Fragen so zutreffend wie möglich. Achten sie bitte darauf, dass alle Fragen beantwortet werden. </strong></p> 
-
-        <p><strong> Falls sie bereits einen Fragebogen ausgefüllt haben und diesen ändern wollen, klicken sie bitte auf HELP </strong></p>
-        
-        <%= link_to "HELP", projects_help_path, class: "btn btn-warning btn-sm" %>
-
-
+        <div class="well">
+          <div class="panel panel-primary">
+            <div class="panel-body">     
+              <p><strong> Bitte beantworten Sie die Fragen so zutreffend wie möglich. Achten sie bitte darauf, dass alle Fragen beantwortet werden. </strong></p> 
+              <p><strong> Falls sie bereits einen Fragebogen ausgefüllt haben und diesen ändern wollen, klicken sie bitte auf HELP </strong></p>            
+            </div>
+          </div> </br>
+          <%= link_to "HELP", projects_help_path, class: "btn btn-warning btn-sm" %> 
         </div>
       </div>     
 

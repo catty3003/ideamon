@@ -4,7 +4,7 @@
     <div class="col-md-12">
 
       <div class="page-header">          
-        <h1> Support MaiMon @ IMon </h1>
+        <h1> Help </h1>
       </div>
 
       <div class="col-md-3" id="leftCol">
@@ -29,87 +29,90 @@
 
       <div class="col-md-9" id="rightCol"> 
         <div class="well"> 
-          <div id="step">       
+          <div class="panel panel-primary">
             <h3>Step by Step</h3>
-            <ol><strong>
-              <li><%= link_to "Sign-Up", projects_help_path(anchor: "sign-up") %></li>
-              <li><%= link_to "Edit Profile", projects_help_path(anchor: "edit") %></li>
-              <li><%= link_to "Add idea", projects_help_path(anchor: "add") %></li>
-              <li><%= link_to "Fragebogen ausfüllen/ändern", projects_help_path(anchor: "frage") %></li>
-              <li><%= link_to "Logout", projects_help_path(anchor: "logout") %></li>
-            </strong></ol>
+            <div class="panel-body"> 
+              <div id="step">                   
+                <ol><strong>
+                  <li><%= link_to "Sign-Up", projects_help_path(anchor: "sign-up") %></li>
+                  <li><%= link_to "Edit Profile", projects_help_path(anchor: "edit") %></li>
+                  <li><%= link_to "Add idea", projects_help_path(anchor: "add") %></li>
+                  <li><%= link_to "Fragebogen ausfüllen/ändern", projects_help_path(anchor: "frage") %></li>
+                  <li><%= link_to "Logout", projects_help_path(anchor: "logout") %></li>
+                </strong></ol>
+              </div>
+            </div>
           </div>
-          <br>
-          <br>
-          <h3>Hilfe</h3>
-          <div id="sign-up">
-            <br>
-            <br>
-            <h4>1. Sign-Up</h4>
-            <p>Der username muss nicht Ihr tatsächlicher Name sein, sie können sich einen beliebigen Phantasienamen als virtuelle Identifikation ausdenken.</p>
+          </br>
+          </br>
+          <div class="panel panel-primary">
+            <div class="panel-body"> 
+              <h3>Hilfe</h3>
+              <div id="sign-up">
+                <br>
+                <br>
+                <h4>1. Sign-Up</h4>
+                <p>Der username muss nicht Ihr tatsächlicher Name sein, sie können sich einen beliebigen Phantasienamen als virtuelle Identifikation ausdenken.</p>
 
-            <p>Ihre E-Mail, sowie sämtliche anderen Angaben werden selbstverständlich vertraulich behandelt. Eine Weitergabe der Daten erfolgt nicht. Für die Auswertung im Rahmen der Bachelorarbeit, werden sämtliche Daten anonymisiert.</p>
+                <p>Ihre E-Mail, sowie sämtliche anderen Angaben werden selbstverständlich vertraulich behandelt. Eine Weitergabe der Daten erfolgt nicht. Für die Auswertung im Rahmen der Bachelorarbeit, werden sämtliche Daten anonymisiert.</p>
 
-            <p>Bitte wählen Sie ein sicheres Passwort mit Buchstaben, Zahlen und Sonderzeichen. Am besten notieren Sie ihr Passwort, da derzeit leider noch keine Passwortwiederherstellung implementiert ist. Administratoren können aus Sicherheitsgründen keine neuen Passwörter für Sie vergeben, da Sie selbst keinen Zugriff auf Ihre Nutzerkonten haben.</p>
-          </div>
+                <p>Bitte wählen Sie ein sicheres Passwort mit Buchstaben, Zahlen und Sonderzeichen. Am besten notieren Sie ihr Passwort, da derzeit leider noch keine Passwortwiederherstellung implementiert ist. Administratoren können aus Sicherheitsgründen keine neuen Passwörter für Sie vergeben, da Sie selbst keinen Zugriff auf Ihre Nutzerkonten haben.</p>
+              </div>
 
-          <div id="edit">
-            <br>
-            <br>
-            <h4>2. Edit Profile</h4>
-            <p>Bitte geben Sie weitere Details zu Ihrer Person an um eine genauere Auswertung zu ermöglichen. Die Daten werden vertraulich behandelt und nur anonymisiert ausgewertet. In einigen der Felder können Sie aus einer Drop-Down Liste den zutreffenden Eintrag auswählen, bei anderen haben Sie die Möglichkeit eine freie Eingabe zu tätigen.</p>
+              <div id="edit">
+                <br>
+                <br>
+                <h4>2. Edit Profile</h4>
+                <p>Bitte geben Sie weitere Details zu Ihrer Person an um eine genauere Auswertung zu ermöglichen. Die Daten werden vertraulich behandelt und nur anonymisiert ausgewertet. In einigen der Felder können Sie aus einer Drop-Down Liste den zutreffenden Eintrag auswählen, bei anderen haben Sie die Möglichkeit eine freie Eingabe zu tätigen.</p>
 
-            <p>Am Ende des Formulars wird zur Authentifizierung Ihr aktuelles Passwort benötigt</p>.
-            <p>Auf der rechten Seite können Sie optional auch Ihr Passwort ändern.</p>
-          </div>
+                <p>Am Ende des Formulars wird zur Authentifizierung Ihr aktuelles Passwort benötigt</p>.
+                <p>Auf der rechten Seite können Sie optional auch Ihr Passwort ändern.</p>
+              </div>
 
-          <div id="add">
-            <br>
-            <br>
-            <h4>3. Add idea</h4>
-            <p>Wählen Sie in der Navigation in der Kopfzeile den Reiter Add Ideas aus. Sie gelangen zur Projektübersicht.</p>
+              <div id="add">
+                <br>
+                <br>
+                <h4>3. Add idea</h4>
+                <p>Wählen Sie in der Navigation in der Kopfzeile den Reiter Add Ideas aus. Sie gelangen zur Projektübersicht.</p>
 
-            <p>Nun wählen Sie bitte nacheinander Projekt 1 und später Projekt 2 aus. Sie gelangen in die jeweilige Einzelansicht.</p>
+                <p>Nun wählen Sie bitte nacheinander Projekt 1 und später Projekt 2 aus. Sie gelangen in die jeweilige Einzelansicht.</p>
 
-            <p>Anschließend finden Sie in der linken unteren Ecke das Fenster um neue Ideen einzutragen. Bitte beschränken Sie sich auf maximal 300 Zeichen um die Ideen übersichtlich zu halten. Vergewissern Sie sich bitte ferner, dass Sie tatsächlich eine Eingabe getätigt haben, bevor Sie die Idee speichern, da andernfalls eine Fehlermeldung ausgegeben wird. In diesem Fall können Sie einfach im Browser die „zurück“ Navigation benutzen. Wenn Sie mit einer Idee zufrieden sind betätigen Sie einfach den „Save Idea“ Button. Sie können diesen Vorgang beliebig oft wiederholen.</p>
+                <p>Anschließend finden Sie in der linken unteren Ecke das Fenster um neue Ideen einzutragen. Bitte beschränken Sie sich auf maximal 300 Zeichen um die Ideen übersichtlich zu halten. Vergewissern Sie sich bitte ferner, dass Sie tatsächlich eine Eingabe getätigt haben, bevor Sie die Idee speichern, da andernfalls eine Fehlermeldung ausgegeben wird. In diesem Fall können Sie einfach im Browser die „zurück“ Navigation benutzen. Wenn Sie mit einer Idee zufrieden sind betätigen Sie einfach den „Save Idea“ Button. Sie können diesen Vorgang beliebig oft wiederholen.</p>
 
-            <p>Falls Sie Schwierigkeiten haben, eine Idee zu finden können Sie im Fenster Ideas auf den Reiter all Ideas  wechseln und sich die Ideen anderer Teilnehmer ausgeben lassen. Anschließend können Sie von diesen inspirieren lassen, diese weiterentwickeln oder kombinieren.</p>
+                <p>Falls Sie Schwierigkeiten haben, eine Idee zu finden können Sie im Fenster Ideas auf den Reiter all Ideas  wechseln und sich die Ideen anderer Teilnehmer ausgeben lassen. Anschließend können Sie von diesen inspirieren lassen, diese weiterentwickeln oder kombinieren.</p>
 
-            <p>Im Reiter my Ideas können Sie falls es tatsächlich notwendig wird auch Ihre bereits eingegebenen Ideen abändern. Klicken Sie dazu einfach auf den Text einer Ihrer Ideen. Allerdings können Sie eine geänderte Idee auch einfach als neue Idee eingeben, dies ist sogar ausdrücklich erwünscht, denn es gibt wie gesagt keine unsinnigen Ideen ;-) Diese Option ist eher zur Fehlerkorrektur angedacht.</p>
+                <p>Im Reiter my Ideas können Sie falls es tatsächlich notwendig wird auch Ihre bereits eingegebenen Ideen abändern. Klicken Sie dazu einfach auf den Text einer Ihrer Ideen. Allerdings können Sie eine geänderte Idee auch einfach als neue Idee eingeben, dies ist sogar ausdrücklich erwünscht, denn es gibt wie gesagt keine unsinnigen Ideen ;-) Diese Option ist eher zur Fehlerkorrektur angedacht.</p>
 
-            <p>Eine weitere Inspirationsquelle finden Sie in der linken oberen Ecke. Dort werden Ihnen in einer Karussell-Box verschiedene sogenannter Kreativismen vorgeschlagen. Dabei handelt es sich um Vorschläge kreativer Vorgehensweisen um zum Beispiel Denkblockaden zu lösen oder entferntere Assoziationen ans Tageslicht zu bringen. Wenn Sie einer der Kreativismen anspricht versuchen Sie es doch einfach einmal, die Beschreibung finden Sie direkt in der Box. Falls Sie nähere Informationen wünschen wählen Sie bitte den Hauptnavigationsreiter (Kopfzeile) Kreativismen an. Dort finden Sie die Liste sämtlicher vorgeschlagener Kreativismen.</p>
-          </div>
+                <p>Eine weitere Inspirationsquelle finden Sie in der linken oberen Ecke. Dort werden Ihnen in einer Karussell-Box verschiedene sogenannter Kreativismen vorgeschlagen. Dabei handelt es sich um Vorschläge kreativer Vorgehensweisen um zum Beispiel Denkblockaden zu lösen oder entferntere Assoziationen ans Tageslicht zu bringen. Wenn Sie einer der Kreativismen anspricht versuchen Sie es doch einfach einmal, die Beschreibung finden Sie direkt in der Box. Falls Sie nähere Informationen wünschen wählen Sie bitte den Hauptnavigationsreiter (Kopfzeile) Kreativismen an. Dort finden Sie die Liste sämtlicher vorgeschlagener Kreativismen.</p>
+              </div>
 
-          <div id="frage">
-            <br>
-            <br>
-            <h4>4. Umfrage</h4>
-            <p>Wenn Sie für beide Projekte Ideen eingebracht haben, nehmen Sie sich doch bitte noch die Zeit, eine kurze Auswertung der Anwendung vorzunehmen. Zu diesem Zweck wählen Sie einfach den Hauptnavigationsreiter (Kopfzeile) Umfrage an. Sie werden zu einer Umfrage weitergeleitet. Diese soll helfen die Anwendung zu verbessern und die Ergebnisse die sie hervorbringt besser zu verstehen. </p>
-            <p><strong> Falls sie bereits einen Fragebogen ausgefüllt haben und diesen ändern wollen, klicken sie bitte auf EDIT (dieser Button erscheint erst, wenn Sie bereits einen Fragebogen ausgefüllt haben) </strong></p>
+              <div id="frage">
+                <br>
+                <br>
+                <h4>4. Umfrage</h4>
+                <p>Wenn Sie für beide Projekte Ideen eingebracht haben, nehmen Sie sich doch bitte noch die Zeit, eine kurze Auswertung der Anwendung vorzunehmen. Zu diesem Zweck wählen Sie einfach den Hauptnavigationsreiter (Kopfzeile) Umfrage an. Sie werden zu einer Umfrage weitergeleitet. Diese soll helfen die Anwendung zu verbessern und die Ergebnisse die sie hervorbringt besser zu verstehen. </p>
+                <p><strong> Falls sie bereits einen Fragebogen ausgefüllt haben und diesen ändern wollen, klicken sie bitte auf EDIT (dieser Button erscheint erst, wenn Sie bereits einen Fragebogen ausgefüllt haben) </strong></p>
 
-            <% @user.questions.order(created_at: :desc).each do |question| %>
-              <%= link_to "Edit", edit_question_path(question), class: "btn btn-warning btn-sm" %>
-            <% end %> 
-          </div>
+                <% @user.questions.order(created_at: :desc).each do |question| %>
+                  <%= link_to "Edit", edit_question_path(question), class: "btn btn-warning btn-sm" %>
+                <% end %> 
+              </div>
 
-          <div id="logout">
-            <br>
-            <br>
-            <h4>5. Logout</h4>
-            <p>Bitte denken Sie zu Ihrer Sicherheit daran sich am Ende ihrer Sitzung abzumelden, den entsprechenden Button finden Sie oben rechts auf der Hauptnavigationsleiste (Kopfzeile).</p>
-          </div> 
+              <div id="logout">
+                <br>
+                <br>
+                <h4>5. Logout</h4>
+                <p>Bitte denken Sie zu Ihrer Sicherheit daran sich am Ende ihrer Sitzung abzumelden, den entsprechenden Button finden Sie oben rechts auf der Hauptnavigationsleiste (Kopfzeile).</p>
+              </div> 
 
-          <div id="ideen">
-            <br>
-            <br>
-            <h4>6. eigene Ideen einsehen</h4>
-            <p>Die Untersuchung findet in 3 Durchläufen statt. Daher können Sie Ihre Ideen nur innerhalb der angegebenen Deadline einsehen. Zwischenzeitlich besteht diese Möglichkeit nicht. Am Ende der Untersuchung können Sie Ihre Ideen aber wieder einsehen. Bitte nehmen Sie nur an einem der Durchläufe teil um die Ergebnisse nicht zu verfälschen. Eingaben in nachfolgenden Durchläufen können nicht berücksichtigt werden. </p>
-          </div>
-
-
-
-
-          
+              <div id="ideen">
+                <br>
+                <br>
+                <h4>6. eigene Ideen einsehen</h4>
+                <p>Die Untersuchung findet in 3 Durchläufen statt. Daher können Sie Ihre Ideen nur innerhalb der angegebenen Deadline einsehen. Zwischenzeitlich besteht diese Möglichkeit nicht. Am Ende der Untersuchung können Sie Ihre Ideen aber wieder einsehen. Bitte nehmen Sie nur an einem der Durchläufe teil um die Ergebnisse nicht zu verfälschen. Eingaben in nachfolgenden Durchläufen können nicht berücksichtigt werden. </p>
+              </div>
+            </div>
+          </div>         
         </div>
       </div>
 

@@ -7,22 +7,40 @@
       </div>
 
       <div class="col-md-3" id="leftCol">
-        <div class="well">    
-          <p><strong>Wählen Sie bitte einen Projekt aus, um Ideen einzugeben.</strong></p>
+        <div class="well">
+          <div class="panel panel-primary">
+            <div class="panel-body">     
+              <p><strong>Wählen Sie bitte einen Projekt aus, um Ideen einzugeben.</strong></p>
+            </div>
+          </div>
         </div>
       </div>     
 
       <div class="col-md-9" id="rightCol"> 
         <div class="well"> 
-          <%= link_to 'New Project', new_project_path, class: "btn btn-success btn-sm" %> |  
+          <%= link_to 'New Project', new_project_path, class: "btn btn-success btn-sm" %>  
           <%= link_to 'Export XLS', url_for(:format => 'xls'), class: "btn btn-primary btn-sm" %> 
           <%= link_to 'Export CSV', url_for(:format => 'csv'), class: "btn btn-primary btn-sm" %>
-          <div class="table-responsive table-scrollable">
-            <h2>To do </br><small><%= pluralize(@todo.count, "Project") %></small></h2>
-            <%= render partial: "projecttable", locals: {projects: @todo, css_class: "todo"} %>
-            <h2>Done</br><small><%= pluralize(@done.count, "Project") %></small></h2>
-            <%= render partial: "projecttable", locals: {projects: @done, css_class: "done"} %>
+        </br>
+        </br>
+          <div class="panel panel-primary">
+            <h3>To do </br><small><%= pluralize(@todo.count, "Project") %></small></h3>
+            <div class="panel-body">
+              <div class="table-responsive table-scrollable">                
+                <%= render partial: "projecttable", locals: {projects: @todo, css_class: "todo"} %>
+              </div>
+            </div>
           </div>
+          </br>
+
+          <div class="panel panel-primary">
+            <h3>Done</br><small><%= pluralize(@done.count, "Project") %></small></h3>
+            <div class="panel-body">
+              <div class="table-responsive table-scrollable">                
+                <%= render partial: "projecttable", locals: {projects: @done, css_class: "done"} %>
+              </div>
+            </div>
+          </div>                        
         </div>
       </div>
 
