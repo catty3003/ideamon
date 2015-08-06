@@ -41,10 +41,12 @@ html {
     z-index:999999;
     max-height: 320px;
     overflow-y:auto; 
+    max-width: 25%;
+    margin-right: 5%;
   }
   @media (max-height: 600px) and (min-width: 992px) {
     position: relative;
-    margin-left: 27%;
+    margin-left: 25%;
     width: auto;
     padding: 19px;
     margin-bottom: 20px;
@@ -74,6 +76,8 @@ html {
     bottom: 1px;
     margin: 0 auto;
     z-index:999999;
+    max-width: 25%;
+    margin-right: 5%;
   }
 }
 
