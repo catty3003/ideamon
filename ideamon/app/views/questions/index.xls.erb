@@ -1,7 +1,7 @@
 <table>
   <thead>
     <tr>
-      <th>ID</th>
+      <th>Q-ID</th>
       <th>F1</th>
       <th>F2</th>
       <th>F3</th>
@@ -20,7 +20,16 @@
       <th>F16</th>
       <th>F17</th>
       <th>F18</th>
-      <th>User</th>
+      <th>UserID</th>
+      <th>Username</th>
+      <th>User-Email</th>
+      <th>Age</th>
+      <th>Sex</th>
+      <th>Nationalität</th>
+      <th>Abschluss</th>
+      <th>Beruf</th>
+      <th>Created_at</th>
+      <th>Updated_at</th>
     </tr>
   </thead>
 
@@ -47,6 +56,15 @@
         <td><%= question.f17 %></td>
         <td><%= question.f18 %></td>
         <td><%= question.user_id %></td>
+        <td><%= question.user.username %></td>
+        <td><%= question.user.email %></td>
+        <td><%= question.user.age %></td>
+        <td><%= question.user.sex %></td>
+        <td><%= question.user.nationality %></td>
+        <td><%= question.user.qualification %></td>
+        <td><%= question.user.profession %></td>
+        <td><%= question.created_at %></td>
+        <td><%= question.updated_at %></td>
       </tr>
     <% end %>
   </tbody>
